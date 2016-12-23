@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class FilmsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,17 +11,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
-        while ($i < 50)
+        $i=0;
+		while ($i < 50)
 		{
 		DB::table('films')->insert([
 		'naziv' => str_random(10),
 		'godina' => date('Y-m-g'),
 		'trajanje' => rand(30, 300)
-		]);
-		$i++		
+		]);	
+		$i++;	
 		}
 
     }
-
 }
